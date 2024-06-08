@@ -10,7 +10,7 @@ RUN apt-get update && \
 ENV DATA_DIR="/serverdata"
 ENV STEAMCMD_DIR="${DATA_DIR}/steamcmd"
 ENV SERVER_DIR="${DATA_DIR}/serverfiles"
-ENV GAME_ID="3017310"
+ENV GAME_ID="3017300"
 ENV GAME_NAME="SoulMask"
 ENV GAME_PARAMS="-SteamServerName=""ServerName"" -MaxPlayers=50 -PSW=""ServerPassword"" -adminpsw=""Admin Password"" -pve"
 ENV GAME_PORT=27015
@@ -33,6 +33,8 @@ RUN mkdir $DATA_DIR && \
 
 ADD /scripts/ /opt/scripts/
 RUN chmod -R 770 /opt/scripts/
+
+EXPOSE 27015/udp 27015/tcp 8777/udp 8777/tcp
 
 #Server Start
 ENTRYPOINT ["/opt/scripts/start.sh"]
