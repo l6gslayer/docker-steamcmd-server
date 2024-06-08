@@ -10,9 +10,9 @@ RUN apt-get update && \
 ENV DATA_DIR="/serverdata"
 ENV STEAMCMD_DIR="${DATA_DIR}/steamcmd"
 ENV SERVER_DIR="${DATA_DIR}/serverfiles"
-ENV GAME_ID="template"
-ENV GAME_NAME="template"
-ENV GAME_PARAMS="template"
+ENV GAME_ID="3017310"
+ENV GAME_NAME="SoulMask"
+ENV GAME_PARAMS="-SteamServerName=""ServerName"" -MaxPlayers=50 -PSW=""ServerPassword"" -adminpsw=""Admin Password"" -pve"
 ENV GAME_PORT=27015
 ENV VALIDATE=""
 ENV UMASK=000
@@ -22,6 +22,7 @@ ENV USERNAME=""
 ENV PASSWRD=""
 ENV USER="steam"
 ENV DATA_PERM=770
+
 
 RUN mkdir $DATA_DIR && \
 	mkdir $STEAMCMD_DIR && \
